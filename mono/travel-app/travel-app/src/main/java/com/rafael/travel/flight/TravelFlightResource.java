@@ -4,6 +4,7 @@ import com.rafael.travel.order.TravelOrder;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
 
 import java.util.List;
 
@@ -29,5 +30,12 @@ public class TravelFlightResource {
         travelFlight.id = null;
         travelFlight.persist();
         return travelFlight;
+    }
+
+    @DELETE
+    @Transactional
+    public Response deleteTravelFligth(long id){
+        TravelFlight.deleteById(id);
+        return Response.accepted().build();
     }
 }

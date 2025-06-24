@@ -32,7 +32,7 @@ public class TravelOrderResource {
 
     @DELETE
     @Transactional
-    public Response deleteTravelOrder(long id){
+    public Response deleteTravelOrderById(long id){
         TravelOrder.deleteById(id);
         return Response.accepted().build();
     }
