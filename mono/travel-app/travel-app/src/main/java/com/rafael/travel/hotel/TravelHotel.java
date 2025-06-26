@@ -8,4 +8,8 @@ public class TravelHotel extends PanacheEntity {
     public long travelOrderId;
     public Integer nights;
 
+    public static TravelHotel findByTravelOrderId(Long id){
+        return find("travelOrderId",id).firstResult();
+    }
+
 }

@@ -24,6 +24,12 @@ public class TravelFlightResource {
         return TravelFlight.findById(id);
     }
 
+    @GET
+    @Path("findByTravelOrderId")
+    public TravelFlight findByTravelOrderId(@QueryParam("travelOrderId") Long id){
+        return TravelFlight.findByTravelOrderId(id);
+    }
+
     @POST
     @Transactional
     public TravelFlight newFlight(TravelFlight travelFlight) {

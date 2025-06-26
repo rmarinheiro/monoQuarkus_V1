@@ -1,5 +1,6 @@
 package com.rafael.travel.hotel;
 
+import com.rafael.travel.flight.TravelFlight;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
@@ -21,6 +22,12 @@ public class TravelHotelResource {
     @Path("findById")
     public TravelHotel findById(long id) {
         return TravelHotel.findById(id);
+    }
+
+    @GET
+    @Path("findByTravelOrderId")
+    public TravelHotel findByTravelOrderId(@QueryParam("travelOrderId") Long id){
+        return TravelHotel.findByTravelOrderId(id);
     }
 
     @POST
